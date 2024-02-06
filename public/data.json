@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Rohan",
+    "gender": "Male",
+    "age": 11,
+    "class": 5
+  },
+  {
+    "id": 2,
+    "name": "Radha",
+    "gender": "Female",
+    "age": 10,
+    "class": 4
+  },
+  {
+    "id": 3,
+    "name": "Amit",
+    "gender": "Male",
+    "age": 9,
+    "class": 3
+  },
+  {
+    "id": 4,
+    "name": "Rahul",
+    "gender": "Male",
+    "age": 8,
+    "class": 2
+  },
+  {
+    "id": 5,
+    "name": "Sonam",
+    "gender": "Female",
+    "age": 7,
+    "class": 1
+  },
+  {
+    "id": 6,
+    "name": "Ravi",
+    "gender": "Male",
+    "age": 8,
+    "class": 2
+  },
+  {
+    "id": 7,
+    "name": "Sakshi",
+    "gender": "Female",
+    "age": 9,
+    "class": 3
+  },
+  {
+    "id": 8,
+    "name": "Sumit",
+    "gender": "Male",
+    "age": 10,
+    "class": 4
+  },
+  {
+    "id": 9,
+    "name": "Priya",
+    "gender": "Female",
+    "age": 11,
+    "class": 5
+  },
+  {
+    "id": 10,
+    "name": "Rakesh",
+    "gender": "Male",
+    "age": 7,
+    "class": 1
+  },
+  {
+    "id": 11,
+    "name": "Sakshi",
+    "gender": "Female",
+    "age": 9,
+    "class": 3
+  },
+  {
+    "id": 12,
+    "name": "Sumit",
+    "gender": "Male",
+    "age": 10,
+    "class": 4
+  },
+  {
+    "id": 13,
+    "name": "Priya",
+    "gender": "Female",
+    "age": 11,
+    "class": 5
+  },
+  {
+    "id": 14,
+    "name": "Rakesh",
+    "gender": "Male",
+    "age": 7,
+    "class": 1
+  },
+  {
+    "id": 15,
+    "name": "Rohan",
+    "gender": "Male",
+    "age": 11,
+    "class": 5
+  },
+  {
+    "id": 16,
+    "name": "Radha",
+    "gender": "Female",
+    "age": 10,
+    "class": 4
+  },
+  {
+    "id": 17,
+    "name": "Amit",
+    "gender": "Male",
+    "age": 9,
+    "class": 3
+  },
+  {
+    "id": 18,
+    "name": "Rohan",
+    "gender": "Male",
+    "age": 11,
+    "class": 5
+  },
+  {
+    "id": 19,
+    "name": "Radha",
+    "gender": "Female",
+    "age": 10,
+    "class": 4
+  },
+  {
+    "id": 20,
+    "name": "Amit",
+    "gender": "Male",
+    "age": 9,
+    "class": 3
+  }
+]

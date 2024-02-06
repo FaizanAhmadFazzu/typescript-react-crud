@@ -1,0 +1,64 @@
+.studentsContainer {
+  max-width: 56rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 2.5rem;
+}
+
+.header h1 {
+  color: var(--color-primary-100);
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.addBtn {
+  border: 0;
+  background: var(--color-primary-100);
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  color: var(--color-white);
+  cursor: pointer;
+  font-weight: 500;
+  height: 3rem;
+  line-height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.addBtn:hover {
+  background: var(--color-primary-200);
+}
+
+.addBtn .icon {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin-right: 6px;
+  font-size: 1.25rem;
+}
+
+.studentsContainer .noRecord {
+  text-align: center;
+}
+
+@media (max-width: 742px) {
+  .header {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header .addBtn {
+    padding: 0 1rem;
+  }
+}

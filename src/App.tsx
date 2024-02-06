@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
+import Students from "./components/students";
 
-
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      Hello World
+    <div className="app">
+      <Students />
     </div>
   );
-}
+};
 
 export default App;
