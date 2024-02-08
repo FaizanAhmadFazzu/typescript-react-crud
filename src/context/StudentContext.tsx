@@ -10,6 +10,9 @@ interface StudentContextType {
   handleEdit: (studentId: string) => void;
   editStudentId: string;
   updateStudent: (student: studentType) => void;
+  deleteStudentId: string;
+  handleDelete: (studentId: string) => void;
+  removeStudent: () => void;
 }
 
 export const StudentContext = createContext<StudentContextType>({
@@ -21,12 +24,16 @@ export const StudentContext = createContext<StudentContextType>({
   handleEdit: () => {},
   editStudentId: "",
   updateStudent: () => {},
+  deleteStudentId: "",
+  handleDelete: () => {},
+  removeStudent: () => {},
 });
 
 export const StudentContextProvider = ({ children }: any) => {
   const [allStudents, setAllStudents] = useState<studentType[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [editStudentId, setEditStudentId] = useState<string>("");
+  const [deleteStudentId, setDeleteStudentId] = useState<string>("");
 
   const fetchData = async () => {
     try {
@@ -52,6 +59,7 @@ export const StudentContextProvider = ({ children }: any) => {
   const closeModal = () => {
     setShowModal(false);
     editStudentId && setEditStudentId("");
+    deleteStudentId && setDeleteStudentId("");
   };
 
   const createStudent = (student: studentType) => {
@@ -72,6 +80,19 @@ export const StudentContextProvider = ({ children }: any) => {
     closeModal();
   };
 
+  const handleDelete = (studentId: string) => {
+    setDeleteStudentId(studentId);
+    openModal();
+  };
+
+  const removeStudent = () => {
+    const newAllStudents = allStudents.filter(
+      (el) => el.id !== parseInt(deleteStudentId)
+    );
+    setAllStudents(newAllStudents);
+    closeModal();
+  };
+
   const value: StudentContextType = {
     allStudents,
     openModal,
@@ -81,7 +102,11 @@ export const StudentContextProvider = ({ children }: any) => {
     handleEdit,
     editStudentId,
     updateStudent,
+    deleteStudentId,
+    handleDelete,
+    removeStudent,
   };
+
   return (
     <StudentContext.Provider value={value}>{children}</StudentContext.Provider>
   );

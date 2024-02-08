@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 import { FaPlus } from "react-icons/fa";
 import { StudentContext } from "../../context/StudentContext";
 import AddStudent from "./addStudent/AddStudent";
+import DeleteStudent from "./deleteStudent/DeleteStudent";
 import EditStudent from "./editStudent/EditStudent";
 import StudentModal from "./studentModal/StudentModal";
 import StudentsList from "./studentsList/StudentsList";
 import "./style.css";
 
 const Students: React.FC = () => {
-  const { allStudents, openModal, showModal, editStudentId } =
+  const { allStudents, openModal, showModal, editStudentId, deleteStudentId } =
     useContext(StudentContext);
   return (
     <div className="studentsContainer">
@@ -28,7 +29,13 @@ const Students: React.FC = () => {
       )}
       {showModal && (
         <StudentModal>
-          {editStudentId ? <EditStudent /> : <AddStudent />}
+          {deleteStudentId ? (
+            <DeleteStudent />
+          ) : editStudentId ? (
+            <EditStudent />
+          ) : (
+            <AddStudent />
+          )}
         </StudentModal>
       )}
     </div>

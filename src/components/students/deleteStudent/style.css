@@ -1,0 +1,20 @@
+.deleteStudent .title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary-100);
+}
+
+.deleteStudent .subtitle {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.deleteStudent button {
+  background: var(--color-primary-100);
+  width: 100%;
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
