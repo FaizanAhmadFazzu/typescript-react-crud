@@ -3,14 +3,23 @@ import { studentType } from "../types/types";
 
 interface StudentContextType {
   allStudents: studentType[];
+  openModal: () => void;
+  closeModal: () => void;
+  showModal: boolean;
+  createStudent: (student: studentType) => void;
 }
 
 export const StudentContext = createContext<StudentContextType>({
   allStudents: [],
+  openModal: () => {},
+  closeModal: () => {},
+  showModal: false,
+  createStudent: () => {},
 });
 
 export const StudentContextProvider = ({ children }: any) => {
   const [allStudents, setAllStudents] = useState<studentType[]>([]);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const fetchData = async () => {
     try {
@@ -29,8 +38,25 @@ export const StudentContextProvider = ({ children }: any) => {
     fetchData();
   }, []);
 
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const createStudent = (student: studentType) => {
+    setAllStudents([student, ...allStudents]);
+    closeModal();
+  };
+
   const value: StudentContextType = {
     allStudents,
+    openModal,
+    closeModal,
+    showModal,
+    createStudent,
   };
   return (
     <StudentContext.Provider value={value}>{children}</StudentContext.Provider>

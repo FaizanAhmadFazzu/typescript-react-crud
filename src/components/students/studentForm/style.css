@@ -1,0 +1,44 @@
+.formContainer {
+    background-color: #f2f2f2;
+    padding: 0.5rem;
+  }
+  
+  .formContainer form {
+    width: 100%;
+  }
+  
+  .formContainer input[type="text"],
+  input[type="number"],
+  input[type="radio"],
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    background-color: #f3f4f6;
+  }
+  
+  .formContainer button[type="submit"] {
+    background: var(--color-primary-100);
+    width: 100%;
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+  
+  .formContainer button[type="submit"]:hover {
+    background: var(--color-primary-200);
+  }
+  
+  .formContainer button[type="submit"]:disabled {
+    cursor: not-allowed;
+    background: #f87171;
+  }
+  
+  .formContainer .error {
+    color: var(--color-primary-100);
+    width: 100%;
+  }
+  

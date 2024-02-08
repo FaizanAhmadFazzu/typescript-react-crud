@@ -1,0 +1,15 @@
+.addStudent div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addStudent .title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary-100);
+}
+
+.addStudent div .icon {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
