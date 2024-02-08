@@ -7,6 +7,9 @@ interface StudentContextType {
   closeModal: () => void;
   showModal: boolean;
   createStudent: (student: studentType) => void;
+  handleEdit: (studentId: string) => void;
+  editStudentId: string;
+  updateStudent: (student: studentType) => void;
 }
 
 export const StudentContext = createContext<StudentContextType>({
@@ -15,11 +18,15 @@ export const StudentContext = createContext<StudentContextType>({
   closeModal: () => {},
   showModal: false,
   createStudent: () => {},
+  handleEdit: () => {},
+  editStudentId: "",
+  updateStudent: () => {},
 });
 
 export const StudentContextProvider = ({ children }: any) => {
   const [allStudents, setAllStudents] = useState<studentType[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [editStudentId, setEditStudentId] = useState<string>("");
 
   const fetchData = async () => {
     try {
@@ -44,10 +51,24 @@ export const StudentContextProvider = ({ children }: any) => {
 
   const closeModal = () => {
     setShowModal(false);
+    editStudentId && setEditStudentId("");
   };
 
   const createStudent = (student: studentType) => {
     setAllStudents([student, ...allStudents]);
+    closeModal();
+  };
+
+  const handleEdit = (studentId: string) => {
+    setEditStudentId(studentId);
+    openModal();
+  };
+
+  const updateStudent = (student: studentType) => {
+    const newAllStudents = allStudents.map((item) =>
+      item.id === student.id ? student : item
+    );
+    setAllStudents(newAllStudents);
     closeModal();
   };
 
@@ -57,6 +78,9 @@ export const StudentContextProvider = ({ children }: any) => {
     closeModal,
     showModal,
     createStudent,
+    handleEdit,
+    editStudentId,
+    updateStudent,
   };
   return (
     <StudentContext.Provider value={value}>{children}</StudentContext.Provider>

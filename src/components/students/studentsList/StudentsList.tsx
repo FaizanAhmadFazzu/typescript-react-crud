@@ -7,7 +7,7 @@ const StudentsList: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortProperty, setSortProperty] = useState<string>("");
   const [filterProperty, setFilterProperty] = useState<string>("");
-  const { allStudents } = useContext(StudentContext);
+  const { allStudents, handleEdit } = useContext(StudentContext);
   return (
     <>
       <div className="tableHeader">
@@ -65,7 +65,7 @@ const StudentsList: React.FC = () => {
                   <td>{item?.age}</td>
                   <td>{item?.class}</td>
                   <td className="actionBtn">
-                    <button>
+                    <button onClick={() => handleEdit(item.id.toString())}>
                       <FaEdit className="icon" />
                     </button>
                     <button>
